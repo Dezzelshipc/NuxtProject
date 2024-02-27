@@ -5,7 +5,6 @@
 
 
 .hw {
-    font-family: Montserrat;
     font-weight: 400;
     font-size: 6em;
 
@@ -16,4 +15,12 @@
 .hw:hover {
     scale: 1.2;
     color: green;
+}
+
+.montserrat {
+    font-family: Montserrat;
+}
+
+.open-sans {
+    font-family: 'Open Sans';
 }

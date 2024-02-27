@@ -1,7 +1,7 @@
 <template>
   <div class="center">
     <h1 class="hw">
-      Hello, world!
+      <span class="montserrat">Hello,</span> <span class="open-sans">world!</span>
     </h1>
   </div>
 </template>
