@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+
+.hw {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 6em;
+
+    transition: all 0.2s cubic-bezier(0.18, 0.89, 0.38, 1.37);
+    scale: 1;
+}
+
+.hw:hover {
+    scale: 1.2;
+    color: green;
+}
