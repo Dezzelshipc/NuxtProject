@@ -13,6 +13,10 @@ export default defineNuxtConfig({
       Montserrat: true,
       'Open Sans': true
     }
+  },
+
+  app: {
+    baseURL: process.env.NODE_ENV === "development" ? process.env.BASE_URL : '/NuxtProject/'
   }
 })
 
