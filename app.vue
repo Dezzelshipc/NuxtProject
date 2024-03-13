@@ -1,19 +1,29 @@
 <template>
-  <div class="center">
-    <h1 class="hw">
-      <span class="montserrat">Hello,</span> <span class="open-sans">world!</span>
-    </h1>
-  </div>
+  <Header/>
+  <MainBody/>
+  <Footer/>
 </template>
 
+
 <script>
-
-console.log("\nHello, console, I mean, world!\n")
-
+import Header from '~/components/Header.vue'
+import MainBody from '~/components/MainBody.vue'
+import Footer from '~/components/Footer.vue'
 </script>
 
-<style>
 
-@import url(~/assets/styles/styles.css);
+<style lang="scss">
+:root {
+  --font-text: 'Open Sans', sans-serif;
+  --font-title: Montserrat, sans-serif;
+
+  --padding-normal: 1.5rem;
+
+  font-family: var(--font-text);
+}
+
+body {
+  margin: 0px;
+}
 
 </style>
