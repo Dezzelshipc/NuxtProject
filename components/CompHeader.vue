@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="left">
-      <img src="/pictures/LogoDark.svg" alt="Zagdom" />
+      <img src="~/assets/pictures/LogoDark.svg" alt="Zagdom" />
       <div class="left_links">
         <a>Реализованные проекты</a>
         <a>Новости</a>
@@ -11,7 +11,7 @@
 
     <div class="right">
       <div>
-        <img src="/pictures/PhoneIcon.svg" />
+        <img src="~/assets/pictures/PhoneIcon.svg" />
         +7 (900) 900-90-90
       </div>
       <button>Оставить заявку</button>
@@ -78,28 +78,30 @@ button {
   font-weight: 400;
 
   color: white;
-  background: #2b2f34;
-
-  &:disabled {
-    background: white;
-
-    color: var(--disabled-color-dark);
-
-    @include outline(var(--disabled-color-dark), 1px);
-  }
+  background: var(--color-primary);
 
   &:focus {
-    background: var(--active-color-dark);
+    background: var(--color-primary);
 
-    @include outline(var(--active-color-bright), 2px);
+    @include outline(var(--color-secondary), 4px);
   }
 
   &:hover {
-    background: var(--active-color-dark);
+    background: var(--color-secondary);
   }
 
   &:active {
-    background: var(--active-color-bright);
+    background: var(--color-secondary);
+
+    @include outline(var(--color-primary), 4px);
+  }
+  
+  &:disabled {
+    background: white;
+
+    color: var(--color-disabled-dark);
+
+    @include outline(var(--color-disabled-dark), 2px);
   }
 }
 </style>
