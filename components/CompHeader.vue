@@ -14,7 +14,7 @@
         <img src="~/assets/pictures/PhoneIcon.svg" />
         +7 (900) 900-90-90
       </div>
-      <button>Оставить заявку</button>
+      <UiButton>Оставить заявку</UiButton>
     </div>
   </header>
 </template>
@@ -24,12 +24,6 @@
   display: flex;
   gap: $gap;
   align-items: $align;
-}
-
-@mixin outline($color, $width) {
-  outline-color: $color;
-  outline-width: $width;
-  outline-offset: -$width;
 }
 
 header {
@@ -66,42 +60,4 @@ header {
   @include flex_gap(8px, center);
 }
 
-button {
-  border-radius: 10px;
-  border: none;
-  outline: 0 solid;
-
-  padding: 16px 40px;
-
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 400;
-
-  color: white;
-  background: var(--color-primary);
-
-  &:focus {
-    background: var(--color-primary);
-
-    @include outline(var(--color-secondary), 4px);
-  }
-
-  &:hover {
-    background: var(--color-secondary);
-  }
-
-  &:active {
-    background: var(--color-secondary);
-
-    @include outline(var(--color-primary), 4px);
-  }
-  
-  &:disabled {
-    background: white;
-
-    color: var(--color-disabled-dark);
-
-    @include outline(var(--color-disabled-dark), 2px);
-  }
-}
 </style>
