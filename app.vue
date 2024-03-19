@@ -1,20 +1,20 @@
 <template>
-  <Header/>
-  <MainBody/>
-  <Footer/>
+  <CompHeader />
 </template>
 
-
 <script>
-import Header from '~/components/Header.vue'
-import MainBody from '~/components/MainBody.vue'
-import Footer from '~/components/Footer.vue'
-</script>
 
+</script>
 
 <style lang="scss">
 :root {
-  --font-text: 'Open Sans', sans-serif;
+  --color-primary: #029f59;
+  --color-secondary: #254741;
+
+  --color-disabled-dark: #9d9c9c;
+  --color-disabled-bright: #d7d7d7;
+
+  --font-text: "Open Sans", sans-serif;
   --font-title: Montserrat, sans-serif;
 
   --padding-normal: 1.5rem;
@@ -22,8 +22,8 @@ import Footer from '~/components/Footer.vue'
   font-family: var(--font-text);
 }
 
-body {
-  margin: 0px;
+* {
+  margin: 0;
+  padding: 0;
 }
-
 </style>
