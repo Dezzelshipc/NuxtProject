@@ -8,7 +8,7 @@ import { mainNav, phoneNumber, email, address } from '~/constants/constants';
 
 <template>
   <footer class="grid_wrapper">
-    <LogoBright class="logo"/>
+    <LogoBright />
     <ul class="links flex_down">
       <li v-for='item in mainNav' :key="item">
         <a :href='item.url'>
@@ -39,18 +39,13 @@ import { mainNav, phoneNumber, email, address } from '~/constants/constants';
     <div class="button_wrapper">
       <UiButton>Оставить заявку</UiButton>
     </div>
-    <span class="pale">© Загдом, 2024</span>
-    <span class="pale">Политика конфиденциальности</span>
-    <span class="pale">Пользовательское соглашение</span>
+    <div class="pale">© Загдом, 2024</div>
+    <div class="pale">Политика конфиденциальности</div>
+    <div class="pale">Пользовательское соглашение</div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
-@mixin grid($row, $col) {
-  grid-row: $row;
-  grid-column: $col;
-}
-
 footer {
   background-color: var(--color-secondary);
   padding: 24px 88px;
