@@ -1,19 +1,27 @@
+<script lang="ts" setup>
+import LogoDark from 'assets/pictures/LogoDark.svg?skipsvgo';
+import { mainNav, phoneNumber } from '~/constants/constants';
+
+</script>
+
 <template>
   <header>
     <div class="left">
-      <img src="~/assets/pictures/LogoDark.svg" alt="Zagdom" />
-      <div class="left_links">
-        <a>Реализованные проекты</a>
-        <a>Новости</a>
-        <a>Контакты</a>
-      </div>
+      <LogoDark class="default_svg"/>
+      <ul class="left_links">
+        <li v-for='item in mainNav' :key="item">
+          <a :href='item.url'>
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div class="right">
-      <div>
-        <img src="~/assets/pictures/PhoneIcon.svg" />
-        +7 (900) 900-90-90
-      </div>
+      <a :href="`tel:${phoneNumber.simple}`">
+        <SvgoPhoneIcon class="PhoneIcon" />
+        {{ phoneNumber.fancy }}
+      </a>
       <UiButton>Оставить заявку</UiButton>
     </div>
   </header>
@@ -49,6 +57,7 @@ header {
 
 .left_links {
   @include flex_gap(24px, center);
+  list-style: none;
 }
 
 .right {
@@ -56,8 +65,17 @@ header {
   color: var(--active-color-dark);
 }
 
-.right > div {
+.right > a {
   @include flex_gap(8px, center);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.PhoneIcon {
+  color: var(--color-primary);
 }
 
 </style>

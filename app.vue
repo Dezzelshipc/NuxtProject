@@ -1,5 +1,9 @@
 <template>
-  <CompHeader />
+  <div class="root">
+    <CompHeader />
+    <CompMain />
+    <CompFooter />
+  </div>
 </template>
 
 <script>
@@ -7,9 +11,12 @@
 </script>
 
 <style lang="scss">
+@import '@csstools/normalize.css';
+
 :root {
   --color-primary: #029f59;
   --color-secondary: #254741;
+  --color-hover: #2B2F34;
 
   --color-disabled-dark: #9d9c9c;
   --color-disabled-bright: #d7d7d7;
@@ -17,13 +24,20 @@
   --font-text: "Open Sans", sans-serif;
   --font-title: Montserrat, sans-serif;
 
-  --padding-normal: 1.5rem;
-
   font-family: var(--font-text);
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+html, body, #__nuxt, .root {
+  height: 100%;
+}
+
+.root {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
 }
 </style>
