@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-
-import LogoBright from 'assets/pictures/LogoBright.svg?skipsvgo';
-import { mainNav, phoneNumber, email, address } from '~/constants/constants';
-
+import LogoBright from 'assets/img/LogoBright.svg?skipsvgo';
+import { mainNav, contactsNav } from '~/constants/constants';
 
 </script>
 
@@ -17,22 +15,12 @@ import { mainNav, phoneNumber, email, address } from '~/constants/constants';
       </li>
     </ul>
     <ul class="addresses flex_down">
-      <li>
-        <a :href="`tel:${phoneNumber.simple}`">
-          <SvgoPhoneIcon/>
-          {{ phoneNumber.fancy }}
-        </a>
-      </li>
-      <li>
-        <a :href="`mailto:${email}`">
-          <SvgoEmailIcon/>
-          {{ email }}
-        </a>
-      </li>
-      <li>
-        <a>
-          <SvgoPointIcon/>
-          {{ address }}
+      <li v-for="item in contactsNav" :key="item">
+        <a :href="item.url">
+          <SvgoPhoneIcon v-if="item.id == 'P'"/>
+          <SvgoEmailIcon v-else-if="item.id == 'M'"/>
+          <SvgoPointIcon v-else-if="item.id == 'A'"/>
+          {{ item.text }}
         </a>
       </li>
     </ul>
@@ -40,8 +28,8 @@ import { mainNav, phoneNumber, email, address } from '~/constants/constants';
       <UiButton>Оставить заявку</UiButton>
     </div>
     <div class="pale">© Загдом, 2024</div>
-    <div class="pale">Политика конфиденциальности</div>
-    <div class="pale">Пользовательское соглашение</div>
+    <a class="pale" href="#">Политика конфиденциальности</a>
+    <a class="pale" href="#">Пользовательское соглашение</a>
   </footer>
 </template>
 
@@ -63,7 +51,7 @@ a {
 .grid_wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 42px;
+  gap: 32px;
 }
 
 .flex_down {
@@ -73,8 +61,8 @@ a {
   flex-direction: column;
 }
 
-.links {
-  align-self: center;
+.links, .addresses {
+  padding-top: 12px;
 }
 
 .addresses {

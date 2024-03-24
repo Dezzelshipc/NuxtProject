@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LogoDark from 'assets/pictures/LogoDark.svg?skipsvgo';
+import LogoDark from 'assets/img/LogoDark.svg?skipsvgo';
 import { mainNav, phoneNumber } from '~/constants/constants';
 
 </script>
@@ -7,7 +7,7 @@ import { mainNav, phoneNumber } from '~/constants/constants';
 <template>
   <header>
     <div class="left">
-      <LogoDark />
+      <LogoDark/>
       <ul class="left_links">
         <li v-for='item in mainNav' :key="item">
           <a :href='item.url'>
