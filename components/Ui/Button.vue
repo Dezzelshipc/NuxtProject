@@ -1,5 +1,5 @@
 <template>
-  <button><slot /></button>
+  <button class="button"><slot /></button>
 </template>
 
 <script>
@@ -10,10 +10,10 @@
 @mixin outline($color, $width) {
   outline-color: $color;
   outline-width: $width;
-  outline-offset: -$width;
+  outline-offset: calc( -2px - $width);
 }
 
-button {
+.button {
   border-radius: 10px;
   border: none;
   outline: 0 solid;
@@ -30,15 +30,15 @@ button {
   &:focus {
     background: var(--color-primary);
 
-    @include outline(var(--color-secondary), 4px);
+    @include outline( var(--color-secondary), 4px);
   }
 
   &:hover {
-    background: var(--color-secondary);
+    background: var(--color-hover);
   }
 
   &:active {
-    background: var(--color-secondary);
+    background: var(--color-hover);
 
     @include outline(var(--color-primary), 4px);
   }
