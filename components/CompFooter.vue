@@ -6,7 +6,7 @@ import { mainNav, contactsNav } from '~/constants/constants';
 
 <template>
   <footer class="grid_wrapper">
-    <LogoBright />
+    <a class="logo" href="/"><LogoBright /></a>
     <ul class="links flex_down">
       <li v-for='item in mainNav' :key="item">
         <a :href='item.url'>
@@ -17,9 +17,9 @@ import { mainNav, contactsNav } from '~/constants/constants';
     <ul class="addresses flex_down">
       <li v-for="item in contactsNav" :key="item">
         <a :href="item.url">
-          <SvgoPhoneIcon v-if="item.id == 'P'"/>
-          <SvgoEmailIcon v-else-if="item.id == 'M'"/>
-          <SvgoPointIcon v-else-if="item.id == 'A'"/>
+          <SvgoPhone v-if="item.id == 'P'"/>
+          <SvgoEmail v-else-if="item.id == 'M'"/>
+          <SvgoPoint v-else-if="item.id == 'A'"/>
           {{ item.text }}
         </a>
       </li>
@@ -59,6 +59,11 @@ a {
   display: flex;
   gap: 24px;
   flex-direction: column;
+}
+
+.logo {
+  width: min-content;
+  height: min-content;
 }
 
 .links, .addresses {

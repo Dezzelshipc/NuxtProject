@@ -7,7 +7,7 @@ import { mainNav, phoneNumber } from '~/constants/constants';
 <template>
   <header>
     <div class="left">
-      <LogoDark/>
+      <a href="/"><LogoDark/></a>
       <ul class="left_links">
         <li v-for='item in mainNav' :key="item">
           <a :href='item.url'>
@@ -16,10 +16,9 @@ import { mainNav, phoneNumber } from '~/constants/constants';
         </li>
       </ul>
     </div>
-
     <div class="right">
       <a :href="`tel:${phoneNumber.simple}`">
-        <SvgoPhoneIcon class="PhoneIcon" />
+        <SvgoPhone class="PhoneIcon" />
         {{ phoneNumber.fancy }}
       </a>
       <UiButton>Оставить заявку</UiButton>
