@@ -8,6 +8,5 @@
 main {
   padding: 24px 88px;
   font-size: 1.5em;
-  height:1000px;
 }
 </style>
