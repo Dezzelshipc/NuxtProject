@@ -1,16 +1,7 @@
-<template>
-  <button class="button"><slot /></button>
-</template>
-
-<script>
-
-</script>
-
-<style lang="scss" scoped>
 @mixin outline($color, $width) {
   outline-color: $color;
   outline-width: $width;
-  outline-offset: calc( -2px - $width);
+  outline-offset: calc(-2px - $width);
 }
 
 .button {
@@ -30,7 +21,7 @@
   &:focus {
     background: var(--color-primary);
 
-    @include outline( var(--color-secondary), 4px);
+    @include outline(var(--color-secondary), 4px);
   }
 
   &:hover {
@@ -51,4 +42,3 @@
     @include outline(var(--color-disabled-dark), 2px);
   }
 }
-</style>
