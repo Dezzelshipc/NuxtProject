@@ -17,6 +17,8 @@ export default {};
   --color-primary: #029f59;
   --color-secondary: #254741;
   --color-hover: #2b2f34;
+  
+  --color-bone: #F5F7F3;
 
   --color-disabled-dark: #9d9c9c;
   --color-disabled-bright: #d7d7d7;

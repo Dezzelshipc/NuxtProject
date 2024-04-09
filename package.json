@@ -20,6 +20,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@iconify/vue": "^4.1.1",
     "nuxt-primevue": "^0.3.1",
     "nuxt-svgo": "^4.0.0",
     "sass": "^1.71.1"

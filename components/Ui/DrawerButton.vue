@@ -22,6 +22,10 @@ export default {
       @touchmove.prevent
       @scroll.prevent
     >
+    <template #header>
+      <UiRequestButton bclass="secondary" />
+    </template>
+
       <ul class="links flex_down">
         <li v-for="item in mainNav" :key="item">
           <a :href="item.url">
@@ -90,12 +94,15 @@ a {
 }
 
 .p-sidebar-header {
-  padding: 32px;
+  padding: 20px;
   display: grid;
+  grid-template-columns: 1fr 50px;
+  justify-items: left;
+  align-items: center;
 }
 
 .p-sidebar-close {
-  justify-self: end;
+  justify-self: center;
   display: grid;
 
   font-size: 16px;
