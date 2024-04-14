@@ -44,7 +44,7 @@ export default {
         </li>
       </ul>
     </Sidebar>
-    <Button class="button" @click="isSidebarVisible = true">
+    <Button class="button pad" @click="isSidebarVisible = true">
       <SvgoLines class="lines_icon" />
     </Button>
   </div>
@@ -70,10 +70,6 @@ a {
 .lines_icon {
   width: 24px;
   height: 14px;
-}
-
-.button {
-  padding: 16px;
 }
 @import url(~/assets/styles/button.scss);
 </style>

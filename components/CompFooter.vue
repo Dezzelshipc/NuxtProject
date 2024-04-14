@@ -4,42 +4,49 @@ import { mainNav, contactsNav } from "~/constants/constants";
 </script>
 
 <template>
-  <footer class="grid_wrapper">
-    <a class="logo" href="/"><LogoBright /></a>
-    <ul class="links flex_down">
-      <li v-for="item in mainNav" :key="item">
-        <a :href="item.url">
-          {{ item.label }}
-        </a>
-      </li>
-    </ul>
-    <ul class="addresses flex_down">
-      <li v-for="item in contactsNav" :key="item">
-        <a :href="item.url">
-          <SvgoPhone v-if="item.id == 'P'" />
-          <SvgoEmail v-else-if="item.id == 'M'" />
-          <SvgoPoint v-else-if="item.id == 'A'" />
-          {{ item.text }}
-        </a>
-      </li>
-    </ul>
-    <div class="button_wrapper">
-      <UiRequestButton />
+  <footer>
+    <div class="grid_wrapper">
+      <a class="logo" href="/"><LogoBright /></a>
+      <ul class="links flex_down">
+        <li v-for="item in mainNav" :key="item">
+          <a :href="item.url">
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+      <ul class="addresses flex_down">
+        <li v-for="item in contactsNav" :key="item">
+          <a :href="item.url">
+            <SvgoPhone v-if="item.id == 'P'" />
+            <SvgoEmail v-else-if="item.id == 'M'" />
+            <SvgoPoint v-else-if="item.id == 'A'" />
+            {{ item.text }}
+          </a>
+        </li>
+      </ul>
+      <div class="button_wrapper">
+        <UiRequestButton />
+      </div>
+      <div class="pale">© Загдом, 2024</div>
+      <a class="pale" href="#">Политика конфиденциальности</a>
+      <a class="pale" href="#">Пользовательское соглашение</a>
     </div>
-    <div class="pale">© Загдом, 2024</div>
-    <a class="pale" href="#">Политика конфиденциальности</a>
-    <a class="pale" href="#">Пользовательское соглашение</a>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 footer {
   background-color: var(--color-secondary);
-  padding: 24px 88px;
+  padding: var(--main-padding);
 
   color: white;
   font-size: 16px;
   font-weight: 100;
+}
+
+footer > div {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 a {
@@ -91,12 +98,6 @@ a {
 .pale {
   opacity: 0.6;
   font-size: 14px;
-}
-
-@media screen and (max-width: 1100px) {
-  footer {
-    padding: 40px 40px;
-  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 550px) {

@@ -27,6 +27,12 @@ export default {};
   --font-title: Montserrat, sans-serif;
 
   font-family: var(--font-text);
+
+  --main-padding-inline: 88px;
+  --main-padding: 24px var(--main-padding-inline);
+  @media screen and (max-width: 1100px) {
+    --main-padding-inline: 40px;
+  }
 }
 
 * {
@@ -44,7 +50,9 @@ body,
 .root {
   display: grid;
   grid-template-rows: min-content auto min-content;
-  max-width: 1920px;
-  margin: auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
 }
 </style>
