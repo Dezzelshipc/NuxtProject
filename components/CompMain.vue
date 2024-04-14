@@ -5,6 +5,7 @@
   <main>
     <div>
       <UiSlider/>
+      <UiSiteDescriprtion/>
     </div>
   </main>
 </template>
@@ -20,7 +21,11 @@ main {
 
 main > div {
   max-width: 1920px;
+  height: 100%;
   display: flex;
   flex-flow: column;
+  align-items: center;
+
+  gap: 120px;
 }
 </style>

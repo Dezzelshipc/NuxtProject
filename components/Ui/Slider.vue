@@ -4,20 +4,20 @@ import { slides } from "~/constants/mock_slider";
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="s_wrapper">
     <Swiper>
       <SwiperSlide v-for="slide in slides" :key="slide">
         <figure>
           <picture>
             <source
               :srcset="`${slide.landscape.x2} 2x, ${slide.landscape.x1}`"
-              
+              media="(min-width: 470px)"
             />
 
-            <!-- <source
+            <source
               :srcset="`${slide.portrait.x2} 2x, ${slide.portrait.x1}`"
-              media="(max-width: 760px)"
-            /> -->
+              media="(max-width: 469px)"
+            />
             <img :src="slide.landscape.x1" :alt="slide.title" />
           </picture>
           <figcaption>
@@ -32,13 +32,13 @@ import { slides } from "~/constants/mock_slider";
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
+.s_wrapper {
   max-width: min(1264px, calc(100vw - 2*var(--main-padding-inline)));
 }
 
 img {
   object-fit: cover;
-  width: 100%;
+  max-width: 100%;
   height: 450px;
   border-radius: 30px;
 }

@@ -35,8 +35,8 @@ const slides = [
             x1: s2_l_1x,
             x2: s2_l_2x,
         },
-        title: '2',
-        text: 'tt2',
+        title: 'Title 2',
+        text: 'Some text 2',
     },
     {
         portrait: {
@@ -47,8 +47,8 @@ const slides = [
             x1: s3_l_1x,
             x2: s3_l_2x,
         },
-        title: '3',
-        text: 'tt3',
+        title: 'Title 3',
+        text: 'Text text text 3',
     }
 ]
 
