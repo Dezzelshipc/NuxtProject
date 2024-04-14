@@ -78,7 +78,7 @@ a {
 <style lang="scss">
 .p-sidebar {
   background-color: var(--color-primary);
-  height: -webkit-fill-available;
+  height: 100%;
   display: flex;
   flex-flow: column;
   width: 300px;
