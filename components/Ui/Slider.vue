@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 import { slides } from "~/constants/mock_slider";
 </script>
 
@@ -9,16 +8,8 @@ import { slides } from "~/constants/mock_slider";
       <SwiperSlide v-for="slide in slides" :key="slide">
         <figure>
           <picture>
-            <source
-              :srcset="`${slide.landscape.x2} 2x, ${slide.landscape.x1}`"
-              media="(min-width: 470px)"
-            />
-
-            <source
-              :srcset="`${slide.portrait.x2} 2x, ${slide.portrait.x1}`"
-              media="(max-width: 469px)"
-            />
-            <img :src="slide.landscape.x1" :alt="slide.title" />
+            <source :srcset="`${slide.x2} 2x, ${slide.x1}`" />
+            <img :src="slide.x1" :alt="slide.title" />
           </picture>
           <figcaption>
             <h1>{{ slide.title }}</h1>
@@ -32,25 +23,38 @@ import { slides } from "~/constants/mock_slider";
 </template>
 
 <style lang="scss" scoped>
-.s_wrapper {
-  max-width: min(1264px, calc(100vw - 2*var(--main-padding-inline)));
-}
-
 img {
   object-fit: cover;
   max-width: 100%;
-  height: 450px;
-  border-radius: 30px;
+  min-height: 450px;
+  // transform: scaleX(-1);
+
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 figure {
-  // max-width: max-content;
+  max-width: max-content;
   position: relative;
+  max-width: 1264px;
+  max-height: 450px;
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #000;
+  background-size: cover;
 }
 
 figcaption {
   color: white;
-  // width: 100%;
 
   padding: 0 144px 113px;
   position: absolute;
@@ -73,7 +77,7 @@ figcaption {
 
   h1 {
     @media screen and (max-width: 759px) {
-      font-size: 1.7em;
+      font-size: 1.5em;
     }
   }
 
@@ -83,12 +87,12 @@ figcaption {
 }
 
 .swiper {
-  // max-width: 1264px;
   max-height: 450px;
-  // width: 100%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+
+  max-width: min(1264px, calc(100vw - 2 * var(--main-padding-inline)));
 }
 </style>

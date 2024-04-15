@@ -33,6 +33,10 @@ export default {};
   @media screen and (max-width: 1100px) {
     --main-padding-inline: 40px;
   }
+
+  @media screen and (max-width: 759px) {
+    --main-padding-inline: 16px;
+  }
 }
 
 * {

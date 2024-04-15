@@ -9,10 +9,10 @@ export default {
 </script>
 
 <template>
-  <button @click="swiper.slidePrev()" class="prev-button button pad0">
+  <button @click="swiper.slidePrev()" class="prev button pad0">
     <SvgoChevronLeft />
   </button>
-  <button @click="swiper.slideNext()" class="next-button button pad0">
+  <button @click="swiper.slideNext()" class="next button pad0">
     <SvgoChevronRight />
   </button>
   <div class="dots">
@@ -30,15 +30,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.prev-button,
-.next-button,
+.prev,
+.next,
 .dots {
   position: absolute;
   z-index: 10;
 }
 
-.prev-button,
-.next-button {
+.prev,
+.next {
   width: 48px;
   height: 48px;
   font-size: 24px;
@@ -48,11 +48,11 @@ export default {
   }
 }
 
-.prev-button {
+.prev {
   left: 16px;
 }
 
-.next-button {
+.next {
   right: 16px;
 }
 
