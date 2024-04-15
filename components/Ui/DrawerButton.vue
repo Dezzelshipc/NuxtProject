@@ -87,6 +87,10 @@ a {
   transform: translate3d(0px, 0px, 0px);
   position: relative;
   transition: transform 0.3s;
+
+  border: 0;
+
+  font-family: var(--font-text);
 }
 
 .p-sidebar-header {

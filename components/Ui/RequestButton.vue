@@ -16,18 +16,31 @@
                 <Icon icon="lucide:x" />
               </DialogClose>
             </div>
-            PLACEHOLDER
-            <div
-              :style="{
-                display: 'flex',
-                marginTop: 25,
-                justifyContent: 'flex-end',
-              }"
-            >
-              <DialogClose as-child>
-                <button class="button">Оставить заявку</button>
-              </DialogClose>
-            </div>
+
+            <FloatLabel>
+              <InputText id="name" v-model="name" class="input-text" />
+              <label for="name">Имя</label>
+            </FloatLabel>
+
+            <FloatLabel>
+              <InputText id="tel" v-model="tel" class="input-text" />
+              <label for="tel">Телефон</label>
+            </FloatLabel>
+
+            <FloatLabel class="message">
+              <TextArea id="message" v-model="message" class="input-text" autoResize />
+              <label for="message">Сообщение</label>
+            </FloatLabel>
+
+            <DialogClose as-child>
+              <button class="button">Оставить заявку</button>
+            </DialogClose>
+
+            <p class="info_text">
+              Нажимая на кнопку «Отправить», вы принимаете
+              <a href="#">пользовательское соглашение</a> и
+              <a href="#">политику конфиденциальности</a>.
+            </p>
           </DialogContent>
         </Transition>
       </DialogPortal>
@@ -45,11 +58,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "radix-vue";
+import InputText from "primevue/inputtext";
+import TextArea from "primevue/textarea";
+import FloatLabel from "primevue/floatlabel";
+
 import { Icon } from "@iconify/vue";
 
 export default {
   data() {
-    return {};
+    return {
+      name: "",
+      tel: "",
+      message: "",
+    };
   },
   components: {
     DialogClose,
@@ -60,6 +81,9 @@ export default {
     DialogTitle,
     DialogTrigger,
     Icon,
+    InputText,
+    TextArea,
+    FloatLabel,
   },
   props: {
     bclass: String,
@@ -67,9 +91,9 @@ export default {
 };
 </script>
 
-<style scoped>
-/* reset */
+<style lang="scss" scoped>
 @import url(~/assets/styles/button.scss);
+@import url(~/assets/styles/input.scss);
 
 .DialogOverlay {
   background-color: rgba(0, 0, 0, 0.2);
@@ -90,6 +114,12 @@ export default {
   max-height: 85vh;
   padding: 25px;
   z-index: 10001;
+
+  display: flex;
+  flex-flow: column;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
 }
 .DialogContent:focus {
   outline: none;
@@ -115,6 +145,7 @@ export default {
 .DialogHeader {
   display: grid;
   grid-template-columns: 1fr 50px;
+  gap: 20px;
 }
 
 .IconButton {
@@ -131,6 +162,35 @@ export default {
   border: 0;
   color: var(--color-primary);
   font-size: 20px;
-  background-color: color-mix(in srgb, currentColor 20%, transparent)
+  background-color: color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.p-float-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    margin-top: -0.5em;
+  }
+}
+
+.info_text {
+  max-width: 350px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+}
+
+.message {
+
+  input {
+    min-height: 100px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
 }
 </style>

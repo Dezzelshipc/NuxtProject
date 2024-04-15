@@ -38,7 +38,7 @@ import { mainNav, phoneNumber } from "~/constants/constants";
 
 header {
   padding: var(--main-padding);
-  max-height: 50px;
+  max-height: 100px;
 
   background-color: white;
 

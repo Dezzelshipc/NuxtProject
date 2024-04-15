@@ -9,6 +9,11 @@ export default defineNuxtConfig({
     'nuxt-swiper'
   ],
 
+  css: [
+    'primevue/resources/themes/aura-light-green/theme.css',
+    'primevue/resources/primevue.min.css',
+  ],
+
   googleFonts: {
     families: {
       Montserrat: true,
