@@ -1,12 +1,31 @@
+<script lang="ts" setup>
+</script>
+
 <template>
   <main>
-    Hello, world!
+    <div>
+      <UiSlider/>
+      <UiSiteDescriprtion/>
+    </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
 main {
-  padding: 24px 88px;
+  padding: var(--main-padding);
   font-size: 1.5em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+main > div {
+  max-width: 1920px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  gap: 120px;
 }
 </style>

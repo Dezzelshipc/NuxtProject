@@ -62,3 +62,11 @@
     @include outline(var(--color-secondary), 4px);
   }
 }
+
+.button.pad {
+  padding: 16px;
+}
+
+.button.pad0 {
+  padding: 0;
+}

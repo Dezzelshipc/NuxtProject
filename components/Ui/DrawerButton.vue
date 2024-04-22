@@ -44,7 +44,7 @@ export default {
         </li>
       </ul>
     </Sidebar>
-    <Button class="button" @click="isSidebarVisible = true">
+    <Button class="button pad" @click="isSidebarVisible = true">
       <SvgoLines class="lines_icon" />
     </Button>
   </div>
@@ -71,10 +71,6 @@ a {
   width: 24px;
   height: 14px;
 }
-
-.button {
-  padding: 16px;
-}
 @import url(~/assets/styles/button.scss);
 </style>
 
@@ -82,7 +78,7 @@ a {
 <style lang="scss">
 .p-sidebar {
   background-color: var(--color-primary);
-  height: -webkit-fill-available;
+  height: 100%;
   display: flex;
   flex-flow: column;
   width: 300px;
@@ -91,6 +87,10 @@ a {
   transform: translate3d(0px, 0px, 0px);
   position: relative;
   transition: transform 0.3s;
+
+  border: 0;
+
+  font-family: var(--font-text);
 }
 
 .p-sidebar-header {

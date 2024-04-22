@@ -5,7 +5,13 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/google-fonts',
     'nuxt-svgo',
-    'nuxt-primevue'
+    'nuxt-primevue',
+    'nuxt-swiper'
+  ],
+
+  css: [
+    'primevue/resources/themes/aura-light-green/theme.css',
+    'primevue/resources/primevue.min.css',
   ],
 
   googleFonts: {
