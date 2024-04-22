@@ -37,6 +37,8 @@ export default {};
   @media screen and (max-width: 759px) {
     --main-padding-inline: 16px;
   }
+
+  --width-dynamic: calc(100vw - 2*var(--main-padding-inline));
 }
 
 * {

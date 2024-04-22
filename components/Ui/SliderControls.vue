@@ -9,10 +9,10 @@ export default {
 </script>
 
 <template>
-  <button @click="swiper.slidePrev()" class="prev button pad0">
+  <button @click="swiper.slidePrev()" class="prev button pad0" :disabled="swiper.activeIndex == 0">
     <SvgoChevronLeft />
   </button>
-  <button @click="swiper.slideNext()" class="next button pad0">
+  <button @click="swiper.slideNext()" class="next button pad0" :disabled="swiper.activeIndex == swiper.slides.length - 1">
     <SvgoChevronRight />
   </button>
   <div class="dots">
@@ -23,9 +23,7 @@ export default {
       @click="swiper.slideTo(index)"
       :title="`Открыть ${index + 1} слайд`"
       :disabled="swiper.activeIndex === index"
-    >
-      <!-- {{ index + 1 }} -->
-    </button>
+    />
   </div>
 </template>
 
