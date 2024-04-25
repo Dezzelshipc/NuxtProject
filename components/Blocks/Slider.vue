@@ -8,8 +8,8 @@ import { slides } from "~/constants/mock_slider";
       <SwiperSlide v-for="slide in slides" :key="slide">
         <figure>
           <picture>
-            <source :srcset="`${slide.x2} 2x, ${slide.x1}`" />
-            <img :src="slide.x1" :alt="slide.title" />
+            <source :srcset="`${slide.image.x2} 2x, ${slide.image.x1}`" />
+            <img :src="slide.image.x1" :alt="slide.title" />
           </picture>
           <figcaption>
             <h1>{{ slide.title }}</h1>

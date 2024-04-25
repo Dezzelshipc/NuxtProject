@@ -40,6 +40,15 @@
     color: var(--color-disabled-dark);
 
     @include outline(var(--color-disabled-dark), 2px);
+
+    outline-offset: -3px;
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: var(--color-primary);
+    @include outline(var(--color-primary), 2px);
+    outline-offset: -2px;
   }
 }
 
