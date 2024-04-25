@@ -27,7 +27,7 @@ import { mainNav, contactsNav } from "~/constants/constants";
       <div class="button_wrapper">
         <UiRequestButton />
       </div>
-      <div class="pale">© Загдом, 2024</div>
+      <div class="pale c">© Загдом, 2024</div>
       <a class="pale" href="#">Политика конфиденциальности</a>
       <a class="pale" href="#">Пользовательское соглашение</a>
     </div>
@@ -106,15 +106,18 @@ a {
   }
 
   .button_wrapper {
-    grid-column: 2;
-    grid-row: 1;
+    grid-area: 1 / 2;
   }
 
   .addresses {
     justify-self: end;
   }
-  .pale:nth-last-of-type(2) {
+  .pale:nth-last-of-type(1) {
     justify-self: end;
+  }
+
+  .pale.c {
+    grid-area: 4 / 2;
   }
 }
 
@@ -125,6 +128,10 @@ a {
 
   .button_wrapper {
     justify-self: start;
+  }
+  
+  .pale.c {
+    grid-area: 7 / 1;
   }
 }
 </style>
