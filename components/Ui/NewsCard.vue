@@ -48,7 +48,7 @@ export default {
 }
 
 .text2 {
-    color: #666;
+  color: #666;
 }
 
 h4 {
