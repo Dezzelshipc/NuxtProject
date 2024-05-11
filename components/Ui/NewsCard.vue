@@ -7,15 +7,25 @@
       </picture>
     </div>
     <div class="text">
-      <p v-html="date.toLocaleDateString()" />
+      <p>
+        {{ date.toLocaleDateString("ru", { day:'numeric', month: "short" }) }}
+        {{ date.getFullYear() }}
+      </p>
       <h4 v-html="title" />
-      <p class="text2" v-html="description" />
+      <p class="text2" v-html="truncate(description, 10, { byWords: true })" />
     </div>
   </div>
 </template>
 
 <script>
+import truncate from 'truncate-html'
+
 export default {
+  data() {
+    return {
+      truncate,
+    }
+  },
   props: {
     image: {
       x1: String,
