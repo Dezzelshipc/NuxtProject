@@ -6,30 +6,30 @@ import { mainNav, contactsNav } from "~/constants/constants";
 <template>
   <footer>
     <div class="grid_wrapper">
-      <a class="logo" href="/"><LogoBright /></a>
+      <NuxtLink class="logo" to="/"><LogoBright /></NuxtLink>
       <ul class="links flex_down">
         <li v-for="item in mainNav" :key="item">
-          <a :href="item.url">
+          <NuxtLink :to="item.url">
             {{ item.label }}
-          </a>
+          </NuxtLink>
         </li>
       </ul>
       <ul class="addresses flex_down">
         <li v-for="item in contactsNav" :key="item">
-          <a :href="item.url">
+          <NuxtLink :href="item.url">
             <SvgoPhone v-if="item.id == 'P'" />
             <SvgoEmail v-else-if="item.id == 'M'" />
             <SvgoPoint v-else-if="item.id == 'A'" />
             {{ item.text }}
-          </a>
+          </NuxtLink>
         </li>
       </ul>
       <div class="button_wrapper">
         <UiRequestButton />
       </div>
       <div class="pale c">© Загдом, 2024</div>
-      <a class="pale" href="#">Политика конфиденциальности</a>
-      <a class="pale" href="#">Пользовательское соглашение</a>
+      <NuxtLink class="pale" href="#">Политика конфиденциальности</NuxtLink>
+      <NuxtLink class="pale" href="#">Пользовательское соглашение</NuxtLink>
     </div>
   </footer>
 </template>

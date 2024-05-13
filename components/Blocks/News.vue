@@ -2,7 +2,7 @@
   <div class="wrapper">
     <section class="upper">
       <h1>Новости</h1>
-      <a href="/news" class="button transparent pad">Все новости</a>
+      <NuxtLink href="/news" class="button transparent pad">Все новости</NuxtLink>
     </section>
     <section class="news">
       <UiNewsCard
@@ -17,16 +17,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { news } from "~/constants/mock_news";
-
-export default {
-  data() {
-    return {
-      news,
-    };
-  },
-};
 </script>
 
 <style lang="scss" scoped>
