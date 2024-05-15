@@ -8,20 +8,20 @@ import { mainNav, phoneNumber } from "~/constants/constants";
   <header>
     <div class="nav">
       <div class="left">
-        <a href="/"><LogoDark /></a>
+        <NuxtLink to="/"><LogoDark /></NuxtLink>
         <ul class="left_links">
           <li v-for="item in mainNav" :key="item">
-            <a :href="item.url">
+            <NuxtLink :to="item.url">
               {{ item.label }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </div>
       <div class="right">
-        <a class="phone" :href="`tel:${phoneNumber.simple}`">
+        <NuxtLink class="phone" :to="`tel:${phoneNumber.simple}`">
           <SvgoPhone />
           {{ phoneNumber.fancy }}
-        </a>
+        </NuxtLink>
         <UiRequestButton class="req_button" />
         <UiDrawerButton class="draw_button" />
       </div>
@@ -86,6 +86,15 @@ header > div {
 a {
   text-decoration: none;
   color: inherit;
+
+  &.router-link-active {
+    color: var(--color-primary);
+    
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .req_button {
