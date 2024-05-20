@@ -1,28 +1,43 @@
 <template>
-    <PaginationRoot :total="100" :sibling-count="0" show-edges :default-page="1">
-      <PaginationList v-slot="{ items }" class="PaginationList">
-        <PaginationPrev :style="{ marginRight: 16 }" class="Button">
-          <Icon icon="radix-icons:chevron-left" />
-        </PaginationPrev>
-        <div/>
-        <template v-for="(page, index) in items">
-          <PaginationListItem v-if="page.type === 'page'" :key="index" class="Button" :value="page.value">
-            {{ page.value }}
-          </PaginationListItem>
-          <PaginationEllipsis v-else :key="page.type" :index="index" class="PaginationEllipsis Button">
-            &#8230;
-          </PaginationEllipsis>
-        </template>
-        <div/>
-        <PaginationNext :style="{ marginLeft: 16 }" class="Button">
-          <Icon icon="radix-icons:chevron-right" />
-        </PaginationNext>
-      </PaginationList>
-    </PaginationRoot>
-  </template>
+  <PaginationRoot
+    v-model:page="page"
+    :total="100"
+    :sibling-count="0"
+    show-edges
+  >
+    <PaginationList v-slot="{ items }" class="PaginationList">
+      <PaginationPrev :style="{ marginRight: 16 }" class="Button">
+        <Icon icon="radix-icons:chevron-left" />
+      </PaginationPrev>
+      <div />
+      <template v-for="(page, index) in items">
+        <PaginationListItem
+          v-if="page.type === 'page'"
+          :key="index"
+          class="Button"
+          :value="page.value"
+        >
+          {{ page.value }}
+        </PaginationListItem>
+        <PaginationEllipsis
+          v-else
+          :key="page.type"
+          :index="index"
+          class="PaginationEllipsis Button"
+        >
+          &#8230;
+        </PaginationEllipsis>
+      </template>
+      <div />
+      <PaginationNext :style="{ marginLeft: 16 }" class="Button">
+        <Icon icon="radix-icons:chevron-right" />
+      </PaginationNext>
+    </PaginationList>
+  </PaginationRoot>
+</template>
 
 <script setup>
-import { Icon } from '@iconify/vue'
+import { Icon } from "@iconify/vue";
 import {
   PaginationEllipsis,
   PaginationFirst,
@@ -33,6 +48,8 @@ import {
   PaginationPrev,
   PaginationRoot,
 } from "radix-vue";
+
+let page = ref(1);
 </script>
 
 <style lang="scss" scoped>
@@ -50,7 +67,7 @@ import {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   border-radius: 10px;
   border: none;
   outline: 1px solid var(--color-disabled-dark);
@@ -68,12 +85,10 @@ import {
     background-color: var(--color-secondary);
   }
 
-
   &:disabled {
     color: var(--color-disabled-bright);
     outline-color: var(--color-disabled-bright);
     background-color: white;
-    
   }
 }
 </style>

@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-svgo',
     'nuxt-primevue',
-    'nuxt-swiper'
+    'nuxt-swiper',
+    'vue-yandex-maps/nuxt'
   ],
 
   css: [
@@ -19,6 +20,9 @@ export default defineNuxtConfig({
       Montserrat: true,
       'Open Sans': true
     }
-  }
-})
+  },
 
+  yandexMaps: {
+    apikey: process.env.YANDEX_MAPS_API_KEY,
+  },
+})
