@@ -1,11 +1,9 @@
 <template>
-  <section class="route">
-    <div>
-      <UiPathNav :names="['Главная', 'Новости']" />
-    </div>
-  </section>
   <section class="news">
     <div>
+      <div class="route">
+        <UiPathNav :names="['Главная', 'Новости']" />
+      </div>
       <div class="news_header">
         <h1>Новости</h1>
       </div>
@@ -44,12 +42,16 @@ section > div {
   max-width: 1920px;
 }
 
-.route {
-  align-self: flex-start;
+.news > div {
+  width: 100%;
 }
 
-.news {
-  width: 100%;
+.route {
+  margin-bottom: 30px;
+}
+
+.news_header {
+  margin-bottom: 30px;
 }
 
 .news_cards {

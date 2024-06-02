@@ -7,23 +7,18 @@ import { mainNav, contactsNav } from "~/constants/constants";
   <footer>
     <div class="grid_wrapper">
       <NuxtLink class="logo" to="/"><LogoBright /></NuxtLink>
-      <ul class="links flex_down">
-        <li v-for="item in mainNav" :key="item">
-          <NuxtLink :to="item.url">
-            {{ item.label }}
-          </NuxtLink>
-        </li>
-      </ul>
-      <ul class="addresses flex_down">
-        <li v-for="item in contactsNav" :key="item">
-          <NuxtLink :href="item.url">
-            <SvgoPhone v-if="item.id == 'P'" />
-            <SvgoEmail v-else-if="item.id == 'M'" />
-            <SvgoPoint v-else-if="item.id == 'A'" />
-            {{ item.text }}
-          </NuxtLink>
-        </li>
-      </ul>
+      <section class="upper_padding">
+        <ul class="flex_down">
+          <li v-for="item in mainNav" :key="item">
+            <NuxtLink :to="item.url">
+              {{ item.label }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
+      <section class="upper_padding">
+        <UiContacts />
+      </section>
       <div class="button_wrapper">
         <UiRequestButton />
       </div>
@@ -72,23 +67,8 @@ a {
   height: min-content;
 }
 
-.links,
-.addresses {
+.upper_padding {
   padding-top: 12px;
-}
-
-.addresses {
-  white-space: pre-line;
-  font-family: var(--font-title);
-
-  & a {
-    display: flex;
-    gap: 8px;
-  }
-
-  & .nuxt-icon {
-    color: var(--color-primary);
-  }
 }
 
 .button_wrapper {
@@ -129,7 +109,7 @@ a {
   .button_wrapper {
     justify-self: start;
   }
-  
+
   .pale.c {
     grid-area: 7 / 1;
   }
