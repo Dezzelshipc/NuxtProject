@@ -10,37 +10,44 @@
         </Transition>
         <Transition name="fade">
           <DialogContent class="DialogContent">
-            <div class="DialogHeader">
-              <DialogTitle class="DialogTitle"> Оставить заявку </DialogTitle>
-              <DialogClose class="IconButton" aria-label="Close">
-                <Icon icon="lucide:x" />
+            <form class="DialogContent">
+              <div class="DialogHeader">
+                <DialogTitle class="DialogTitle"> Оставить заявку </DialogTitle>
+                <DialogClose class="IconButton" aria-label="Close">
+                  <Icon icon="lucide:x" />
+                </DialogClose>
+              </div>
+
+              <FloatLabel>
+                <InputText id="name" v-model="name" class="input-text" />
+                <label for="name">Имя</label>
+              </FloatLabel>
+
+              <FloatLabel>
+                <InputText id="tel" v-model="tel" class="input-text" />
+                <label for="tel">Телефон</label>
+              </FloatLabel>
+
+              <FloatLabel class="message">
+                <TextArea
+                  id="message"
+                  v-model="message"
+                  class="input-text"
+                  autoResize
+                />
+                <label for="message">Сообщение</label>
+              </FloatLabel>
+
+              <DialogClose as-child>
+                <button class="button">Оставить заявку</button>
               </DialogClose>
-            </div>
 
-            <FloatLabel>
-              <InputText id="name" v-model="name" class="input-text" />
-              <label for="name">Имя</label>
-            </FloatLabel>
-
-            <FloatLabel>
-              <InputText id="tel" v-model="tel" class="input-text" />
-              <label for="tel">Телефон</label>
-            </FloatLabel>
-
-            <FloatLabel class="message">
-              <TextArea id="message" v-model="message" class="input-text" autoResize />
-              <label for="message">Сообщение</label>
-            </FloatLabel>
-
-            <DialogClose as-child>
-              <button class="button">Оставить заявку</button>
-            </DialogClose>
-
-            <p class="info_text">
-              Нажимая на кнопку «Отправить», вы принимаете
-              <a href="#">пользовательское соглашение</a> и
-              <a href="#">политику конфиденциальности</a>.
-            </p>
+              <p class="info_text">
+                Нажимая на кнопку «Отправить», вы принимаете
+                <a href="#">пользовательское соглашение</a> и
+                <a href="#">политику конфиденциальности</a>.
+              </p>
+            </form>
           </DialogContent>
         </Transition>
       </DialogPortal>
@@ -172,12 +179,15 @@ export default {
 
   label {
     margin-top: -0.5em;
+    font-family: var(--font-title);
+    font-size: 14px;
   }
 }
 
 .info_text {
   max-width: 350px;
   text-align: center;
+  color: var(--color-pale);
 
   a {
     text-decoration: none;
@@ -185,12 +195,17 @@ export default {
   }
 }
 
-.message {
+.input-text {
+  border: none;
+  box-shadow: none;
 
-  input {
-    min-height: 100px;
-    word-wrap: break-word;
-    word-break: break-all;
-  }
+  min-height: 58px;
+}
+
+.message textarea {
+  min-height: 100px;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding-block: 12px;
 }
 </style>
